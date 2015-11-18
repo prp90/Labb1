@@ -1,8 +1,5 @@
-import static org.junit.Assert.*;
-
-
+import static org.mockito.Mockito.*;
 import junit.framework.TestCase;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,4 +23,12 @@ public class FerryTest extends TestCase {
 	public void testFerryObjectIsEmptyShouldReturnTrue(){
 		assertTrue(testFerryObject.isEmpty());
 	}
+	
+	@Test
+	public void testThereIsSpaceForPassengerShouldReturnTrue(){
+		
+		assertTrue(testFerryObject.acceptingNewPassenger());
+	}
+	
+	
 }

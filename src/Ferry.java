@@ -7,4 +7,10 @@ public class Ferry {
 		return vehicleSpace == 0? true: false;
 	}
 
+	public boolean acceptingNewPassenger() {
+		
+		return false;
+	}
+
+
 }
