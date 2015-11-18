@@ -9,7 +9,7 @@ public class Ferry {
 
 	public boolean acceptingNewPassenger() {
 		
-		return false;
+		return true;
 	}
 
 
