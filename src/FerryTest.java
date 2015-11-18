@@ -6,7 +6,6 @@ import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
-
 public class FerryTest extends TestCase {
 
 	private Ferry testFerryObject;
@@ -22,6 +21,9 @@ public class FerryTest extends TestCase {
 		assertNotNull(testFerryObject);
 		
 	}
-	
 
+	@Test
+	public void testFerryObjectIsEmptyShouldReturnTrue(){
+		assertTrue(testFerryObject.isEmpty());
+	}
 }
