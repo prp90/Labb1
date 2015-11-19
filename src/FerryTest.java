@@ -45,12 +45,6 @@ public class FerryTest extends TestCase {
 		
 	}
 
-	@Test
-	public void testEmbarkNewPassengersPass(){
-		testFerryObject = mock(Ferry.class);
-		doNothing().when(testFerryObject).embarkNewPassenger();
-		verify(testFerryObject, times(1)).acceptingNewPassenger();
-	}
 	
 	
 	
