@@ -21,5 +21,11 @@ public class Ferry {
 		return (vehicles < MAX_VEHICLES);
 	}
 
+	public Object getNumberOfPassengers() {
+	
+		return null;
+	}
+
+	
 
 }

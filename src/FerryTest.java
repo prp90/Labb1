@@ -36,5 +36,17 @@ public class FerryTest extends TestCase {
 		assertTrue(testFerryObject.acceptingNewVehicle());
 	}
 	
+	@Test
+	public void testNumberOfPassengers(){
+		
+		testFerryObject = mock(Ferry.class);
+	
+		assertEquals(30, testFerryObject.getNumberOfPassengers());
+		
+	}
+
+	
+	
+	
 	
 }
