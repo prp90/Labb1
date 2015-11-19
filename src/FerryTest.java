@@ -30,5 +30,11 @@ public class FerryTest extends TestCase {
 		assertTrue(testFerryObject.acceptingNewPassenger());
 	}
 	
+	@Test
+	public void testThereIsSpaceForVehicleShouldReturnTrue(){
+		
+		assertTrue(testFerryObject.acceptingNewVehicle());
+	}
+	
 	
 }

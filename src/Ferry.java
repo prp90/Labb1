@@ -14,5 +14,9 @@ public class Ferry {
 		return passengers < MAX_PASSENGERS;
 	}
 
+	public boolean acceptingNewVehicle() {
+		return false;
+	}
+
 
 }
