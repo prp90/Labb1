@@ -40,7 +40,6 @@ public class FerryTest extends TestCase {
 	public void testNumberOfPassengers(){
 		
 		testFerryObject = mock(Ferry.class);
-		when(testFerryObject.getNumberOfPassengers()).thenReturn(30);
 		assertEquals(30, testFerryObject.getNumberOfPassengers());
 		
 	}
