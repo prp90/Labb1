@@ -5,6 +5,7 @@ public class Ferry {
 	private final int MAX_PASSENGERS = 200;
 	private int passengers = 0;
 	
+	
 	public boolean isEmpty() {
 		return vehicleSpace == 0? true: false;
 	}
@@ -15,7 +16,7 @@ public class Ferry {
 	}
 
 	public boolean acceptingNewVehicle() {
-		return false;
+		return true;
 	}
 
 
