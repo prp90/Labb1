@@ -26,6 +26,11 @@ public class Ferry {
 		return passengers;
 	}
 
+	public void embarkNewPassenger() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 
 }
