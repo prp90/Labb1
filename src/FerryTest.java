@@ -1,5 +1,6 @@
 import static org.mockito.Mockito.*;
 import junit.framework.TestCase;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -46,9 +47,8 @@ public class FerryTest extends TestCase {
 	}
 
 
-	@Test
-	public void testEmbarkNewPassengersPass(){
-
+	@Test(expected=Exception.class)
+	public void testEmbarkNewPassengersPass() throws Exception{
 		Passenger passenger = mock(Passenger.class);
 		testFerryObject.embarkNewPassenger(passenger);
 		verify(passenger, times(1)).newPassenger();

@@ -13,7 +13,6 @@ public class Ferry {
 	}
 
 	public boolean acceptingNewPassenger() {
-
 		return (passengers < MAX_PASSENGERS);
 	}
 
@@ -22,16 +21,17 @@ public class Ferry {
 	}
 
 	public int getNumberOfPassengers() {
-
 		return passengers;
 	}
 
-	public void embarkNewPassenger(Passenger p) {
-
-		p.newPassenger();
+	public void embarkNewPassenger(Passenger p) throws Exception {
+		if(acceptingNewPassenger()){
+			p.newPassenger();
+			passengers++;
+		}else {
+			throw new Exception("Ferry has no more space for passengers");
+		}
 
 	}
-
-
 
 }
