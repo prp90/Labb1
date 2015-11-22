@@ -47,13 +47,22 @@ public class FerryTest extends TestCase {
 	}
 
 
-	@Test(expected=Exception.class)
-	public void testEmbarkNewPassengersPass() throws Exception{
+	@Test
+	public void testEmbarkNewPassengersPass(){
 		Passenger passenger = mock(Passenger.class);
 		testFerryObject.embarkNewPassenger(passenger);
 		verify(passenger, times(1)).newPassenger();
 	}
 
+	@Test
+	public void testEmbarkNewPassengersShouldThrowException(){
+		Ferry ferrySpy = spy(new Ferry());
+		when(ferrySpy.getNumberOfPassengers()).thenReturn(300);
+		Passenger p = mock(Passenger.class);
+		ferrySpy.embarkNewPassenger(p);
+		
+
+	}
 
 
 }
