@@ -10,5 +10,10 @@ public class Vehicle {
 	public int getSpace() {
 		return this.space;
 	}
+	
+	public int getNumberOfPassengersInsideVehicle() {
+		
+		return 0;
+	}
 
 }

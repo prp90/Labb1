@@ -38,5 +38,10 @@ public class Ferry {
 		return v.getSpace();
 	}
 
+	public int getVehiclePassengers(Vehicle v) {
+		
+		return v.getNumberOfPassengersInsideVehicle();
+	}
+
 }
 
