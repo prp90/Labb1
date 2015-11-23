@@ -14,7 +14,7 @@ public class Ferry {
 	}
 
 	public boolean acceptingNewVehicle() {
-		return (getNumberOfVehicleSpacesOccupied() < MAX_VEHICLES);
+		return getNumberOfVehicleSpacesOccupied() >= MAX_VEHICLES ? false : true;
 	}
 
 	public int getNumberOfPassengers() {
