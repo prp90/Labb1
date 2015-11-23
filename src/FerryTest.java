@@ -2,11 +2,16 @@ import static org.mockito.Mockito.*;
 import junit.framework.TestCase;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class FerryTest extends TestCase {
 
 	private Ferry testFerryObject;
+
+	@Rule
+	public ExpectedException e = ExpectedException.none();
 
 	@Before
 	public void setUp() throws Exception {
@@ -59,10 +64,12 @@ public class FerryTest extends TestCase {
 		Ferry ferrySpy = spy(new Ferry());
 		when(ferrySpy.getNumberOfPassengers()).thenReturn(300);
 		Passenger p = mock(Passenger.class);
-		ferrySpy.embarkNewPassenger(p);
-		
+		try{
+			ferrySpy.embarkNewPassenger(p);
+		}
+		catch (RuntimeException e){
+
+		}
 
 	}
-
-
 }
