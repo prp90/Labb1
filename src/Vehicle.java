@@ -2,9 +2,11 @@
 public class Vehicle {
 
 	private int space;
+	private int passengers;
 
-	Vehicle(int space){
+	Vehicle(int space, int passengers){
 		this.space = space;
+		this.passengers = passengers;
 	}
 	
 	public int getSpace() {
@@ -12,7 +14,8 @@ public class Vehicle {
 	}
 	
 	public int getNumberOfPassengersInsideVehicle() {
-		return 2;
+		return this.passengers;
 	}
+
 
 }

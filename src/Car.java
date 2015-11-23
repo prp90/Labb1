@@ -1,7 +1,7 @@
 
 public class Car extends Vehicle {
 
-	Car() {
-		super(5);
+	Car(int passengers) {
+		super(5, passengers);
 	}
 }

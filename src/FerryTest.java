@@ -90,19 +90,19 @@ public class FerryTest extends TestCase {
 
 	@Test 
 	public void testGetVehicleSpace(){
-		Vehicle vehicle = new Vehicle(5);
+		Vehicle vehicle = new Vehicle(5,4);
 		assertEquals(5, testFerryObject.getVehicleSpace(vehicle));
 	}
 
 	@Test
 	public void testGetVehicleSpaceForCar(){
-		Car car = new Car();
+		Car car = new Car(1);
 		assertEquals(5, testFerryObject.getVehicleSpace(car));
 	}
 	
 	@Test
 	public void testGetNumberOfPassengersInsideVehicle(){
-		Car car = new Car();
+		Car car = new Car(2);
 		assertEquals(2, testFerryObject.getVehiclePassengers(car));
 	}
 
