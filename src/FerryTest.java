@@ -38,6 +38,9 @@ public class FerryTest extends TestCase {
 
 	@Test
 	public void testThereIsSpaceForPassengerShouldReturnFalse(){
+		testFerryObject = mock(Ferry.class); 
+		when(testFerryObject.getNumberOfPassengers()).thenReturn(201);
+		when(testFerryObject.acceptingNewPassenger()).thenCallRealMethod();
 		assertFalse(testFerryObject.acceptingNewPassenger());
 	}
 	
