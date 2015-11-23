@@ -4,7 +4,6 @@ public class Ferry {
 	private final int MAX_PASSENGERS = 200;
 	private int passengers = 0;
 	private final int MAX_VEHICLES = 200;
-	private int vehicles = 0;
 
 	public boolean isEmpty() {
 		return vehicleSpace == 0? true: false;
@@ -15,7 +14,7 @@ public class Ferry {
 	}
 
 	public boolean acceptingNewVehicle() {
-		return (vehicles < MAX_VEHICLES);
+		return (getNumberOfVehicleSpacesOccupied() < MAX_VEHICLES);
 	}
 
 	public int getNumberOfPassengers() {
@@ -32,7 +31,7 @@ public class Ferry {
 	}
 
 	public int getNumberOfVehicleSpacesOccupied() {
-		return 1;
+		return this.vehicleSpace;
 	}
 
 }

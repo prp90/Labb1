@@ -75,7 +75,9 @@ public class FerryTest extends TestCase {
 	
 	@Test
 	public void testNumberOfVehiclesSpacesOccupiedReturnValue(){
-		assertEquals(1, testFerryObject.getNumberOfVehicleSpacesOccupied());
+		testFerryObject = mock(Ferry.class);
+		when(testFerryObject.getNumberOfVehicleSpacesOccupied()).thenReturn(50);
+		assertEquals(50, testFerryObject.getNumberOfVehicleSpacesOccupied());
 		
 		
 	}
