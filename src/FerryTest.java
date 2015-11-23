@@ -105,6 +105,13 @@ public class FerryTest extends TestCase {
 		Car car = new Car(2);
 		assertEquals(2, testFerryObject.getVehiclePassengers(car));
 	}
+	
+	@Test
+	public void testEmbarkNewVehicleShouldPass(){
+		Car car = mock(Car.class);
+		testFerryObject.embarkNewVehicle(car);
+		verify(car, times(1)).newCar();
+	}
 
 
 
