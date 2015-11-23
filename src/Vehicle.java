@@ -12,8 +12,7 @@ public class Vehicle {
 	}
 	
 	public int getNumberOfPassengersInsideVehicle() {
-		
-		return 0;
+		return 2;
 	}
 
 }
