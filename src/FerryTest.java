@@ -2,25 +2,25 @@ import static org.mockito.Mockito.*;
 import junit.framework.TestCase;
 
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
+
 
 public class FerryTest extends TestCase {
 
 	private Ferry testFerryObject;
+	private Ferry ferrySpy;
+	private Passenger passenger;
 
-	@Rule
-	public ExpectedException e = ExpectedException.none();
 
 	@Before
 	public void setUp() throws Exception {
 		testFerryObject = new Ferry();
+		ferrySpy = spy(new Ferry());
+		passenger = mock(Passenger.class);
 	}
 
 	@Test
 	public void testFerryObjectNotNull(){
-
 		assertNotNull(testFerryObject);
 
 	}
@@ -32,7 +32,6 @@ public class FerryTest extends TestCase {
 
 	@Test
 	public void testThereIsSpaceForPassengerShouldReturnTrue(){
-
 		assertTrue(testFerryObject.acceptingNewPassenger());
 	}
 
@@ -46,34 +45,28 @@ public class FerryTest extends TestCase {
 	
 	@Test
 	public void testThereIsSpaceForVehicleShouldReturnTrue(){
-
 		assertTrue(testFerryObject.acceptingNewVehicle());
 	}
 
 	@Test
-	public void testNumberOfPassengers(){
-
+	public void testNumberOfPassengersReturnValue(){
 		testFerryObject = mock(Ferry.class);
 		when(testFerryObject.getNumberOfPassengers()).thenReturn(30);
 		assertEquals(30, testFerryObject.getNumberOfPassengers());
-
 	}
 
 
 	@Test
-	public void testEmbarkNewPassengersPass(){
-		Passenger passenger = mock(Passenger.class);
+	public void testEmbarkNewPassengersShouldPass(){
 		testFerryObject.embarkNewPassenger(passenger);
 		verify(passenger, times(1)).newPassenger();
 	}
 
 	@Test
 	public void testEmbarkNewPassengersShouldThrowException(){
-		Ferry ferrySpy = spy(new Ferry());
 		when(ferrySpy.getNumberOfPassengers()).thenReturn(300);
-		Passenger p = mock(Passenger.class);
 		try{
-			ferrySpy.embarkNewPassenger(p);
+			ferrySpy.embarkNewPassenger(passenger);
 		}
 		catch (RuntimeException e){
 
