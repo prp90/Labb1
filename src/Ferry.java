@@ -33,19 +33,22 @@ public class Ferry {
 	public int getNumberOfVehicleSpacesOccupied() {
 		return this.vehicleSpace;
 	}
-	
+
 	public int getVehicleSpace(Vehicle v){
 		return v.getSpace();
 	}
 
 	public int getVehiclePassengers(Vehicle v) {
-		
+
 		return v.getNumberOfPassengersInsideVehicle();
 	}
 
 	public void embarkNewVehicle(Vehicle v) {
-		
+		v.newVehicle();
+
 	}
 
 }
+
+
 

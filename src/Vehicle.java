@@ -17,5 +17,10 @@ public class Vehicle {
 		return this.passengers;
 	}
 
+	public void newVehicle() {
+		
+		
+	}
+
 
 }

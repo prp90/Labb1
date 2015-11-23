@@ -5,7 +5,4 @@ public class Car extends Vehicle {
 		super(5, passengers);
 	}
 
-	public void newCar() {
-	
-	}
 }

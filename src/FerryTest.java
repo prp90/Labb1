@@ -108,8 +108,8 @@ public class FerryTest extends TestCase {
 
 	@Test
 	public void testEmbarkNewVehicleShouldPass(){
-		Car car = mock(Car.class);
-		testFerryObject.embarkNewVehicle(car);
-		verify(car, times(1)).newCar();
+		Vehicle v = mock(Vehicle.class);
+		testFerryObject.embarkNewVehicle(v);
+		verify(v, times(1)).newVehicle();
 	}
 }
