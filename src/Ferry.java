@@ -32,8 +32,7 @@ public class Ferry {
 	}
 
 	public int getNumberOfVehicleSpacesOccupied() {
-		
-		return 0;
+		return 1;
 	}
 
 }
