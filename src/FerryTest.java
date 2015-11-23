@@ -37,6 +37,11 @@ public class FerryTest extends TestCase {
 	}
 
 	@Test
+	public void testThereIsSpaceForPassengerShouldReturnFalse(){
+		assertFalse(testFerryObject.acceptingNewPassenger());
+	}
+	
+	@Test
 	public void testThereIsSpaceForVehicleShouldReturnTrue(){
 
 		assertTrue(testFerryObject.acceptingNewVehicle());
@@ -70,6 +75,8 @@ public class FerryTest extends TestCase {
 		catch (RuntimeException e){
 
 		}
-
 	}
+	
+
+
 }
