@@ -47,7 +47,12 @@ public class FerryTest extends TestCase {
 	public void testThereIsSpaceForVehicleShouldReturnTrue(){
 		assertTrue(testFerryObject.acceptingNewVehicle());
 	}
-
+	
+	@Test
+	public void testThereIsSpaceForVehicleShouldReturnFalse(){
+		assertFalse("Should Return false", testFerryObject.acceptingNewVehicle());
+	}
+	
 	@Test
 	public void testNumberOfPassengersReturnValue(){
 		testFerryObject = mock(Ferry.class);
@@ -78,7 +83,6 @@ public class FerryTest extends TestCase {
 		testFerryObject = mock(Ferry.class);
 		when(testFerryObject.getNumberOfVehicleSpacesOccupied()).thenReturn(50);
 		assertEquals(50, testFerryObject.getNumberOfVehicleSpacesOccupied());
-		
 		
 	}
 	
