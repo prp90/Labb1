@@ -24,15 +24,12 @@ public class Ferry {
 	}
 
 	public void embarkNewPassenger(Passenger p){
-
 		if(acceptingNewPassenger()){
 			p.newPassenger();
 			passengers++;
-
 		}else {
 			throw new RuntimeException("Ferry has no more space for passengers");
 		}
-
 	}
 
 }
