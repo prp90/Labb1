@@ -1,8 +1,14 @@
 
 public class Vehicle {
 
+	private int space;
+
+	Vehicle(int space)
+	{
+		this.space = space;
+	}
 	public int getSpace() {
-		return 1;
+		return this.space;
 	}
 
 }

@@ -35,8 +35,6 @@ public class Ferry {
 	}
 	
 	public int getVehicleSpace(Vehicle v){
-		
-		
 		return v.getSpace();
 	}
 
