@@ -73,6 +73,14 @@ public class FerryTest extends TestCase {
 		}
 	}
 	
+	@Test
+	public void testNumberOfVehiclesSpacesOccupiedReturnValue(){
+		
+		assertEquals(1, testFerryObject.getNumberOfVehicleSpacesOccupied());
+		
+		
+	}
+	
 
 
 }

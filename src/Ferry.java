@@ -6,7 +6,6 @@ public class Ferry {
 	private final int MAX_VEHICLES = 200;
 	private int vehicles = 0;
 
-
 	public boolean isEmpty() {
 		return vehicleSpace == 0? true: false;
 	}
@@ -30,6 +29,11 @@ public class Ferry {
 		}else {
 			throw new RuntimeException("Ferry has no more space for passengers");
 		}
+	}
+
+	public int getNumberOfVehicleSpacesOccupied() {
+		
+		return 0;
 	}
 
 }
