@@ -43,9 +43,5 @@ public class Ferry {
 		return v.getNumberOfPassengersInsideVehicle();
 	}
 
-	public void embarkNewVehicle(Car car) {
-		
-	}
-
 }
 
