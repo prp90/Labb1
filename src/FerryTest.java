@@ -42,12 +42,12 @@ public class FerryTest extends TestCase {
 		when(testFerryObject.acceptingNewPassenger()).thenCallRealMethod();
 		assertFalse(testFerryObject.acceptingNewPassenger());
 	}
-	
+
 	@Test
 	public void testThereIsSpaceForVehicleShouldReturnTrue(){
 		assertTrue(testFerryObject.acceptingNewVehicle());
 	}
-	
+
 	@Test
 	public void testThereIsSpaceForVehicleShouldReturnFalse(){
 		testFerryObject = mock(Ferry.class);
@@ -55,7 +55,7 @@ public class FerryTest extends TestCase {
 		when(testFerryObject.acceptingNewVehicle()).thenCallRealMethod();
 		assertFalse("Should Return false", testFerryObject.acceptingNewVehicle());
 	}
-	
+
 	@Test
 	public void testNumberOfPassengersReturnValue(){
 		testFerryObject = mock(Ferry.class);
@@ -80,23 +80,26 @@ public class FerryTest extends TestCase {
 
 		}
 	}
-	
+
 	@Test
 	public void testNumberOfVehiclesSpacesOccupiedReturnValue(){
 		testFerryObject = mock(Ferry.class);
 		when(testFerryObject.getNumberOfVehicleSpacesOccupied()).thenReturn(50);
 		assertEquals(50, testFerryObject.getNumberOfVehicleSpacesOccupied());
-		}
-	
+	}
+
 	@Test 
 	public void testGetVehicleSpace(){
-		
 		Vehicle vehicle = new Vehicle(5);
 		assertEquals(5, testFerryObject.getVehicleSpace(vehicle));
-	
 	}
-	
-	
+
+	@Test
+	public void testGetVehicleSpaceForCar(){
+		Car car = new Car();
+		assertEquals(5, testFerryObject.getVehicleSpace(car));
+	}
+
 
 
 }
