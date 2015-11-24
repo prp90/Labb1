@@ -48,8 +48,14 @@ public class Ferry {
 	public void embarkNewVehicle(Vehicle v) {
 		if(acceptingNewVehicle()){
 			if(spaceAvailableForVehicle(v)){
+				if(spaceAvailableForPassengersInsideVehicle(v)){
 				v.newVehicle();
 				vehicleSpaceOccupied += getVehicleSpace(v);
+				passengers += getVehiclePassengers(v);
+				}
+				else{
+					throw new RuntimeException("Not enough space for vehicles passengers.");
+				}
 			}
 			else{
 				throw new RuntimeException("Ferry's available space is not enough for this vehicle");
