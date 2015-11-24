@@ -162,7 +162,13 @@ public class FerryTest extends TestCase {
 	public void testEmbarkVehiclesPassengersShouldThrowException(){
 		Car car = new Car(3);
 		when(ferrySpy.getNumberOfPassengers()).thenReturn(199);
+		try{
 		ferrySpy.embarkNewVehicle(car);
+		}catch (RuntimeException e){
+			
+		}
+		
+		
 	}
 
 }
