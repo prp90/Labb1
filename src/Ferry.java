@@ -44,8 +44,10 @@ public class Ferry {
 	}
 
 	public void embarkNewVehicle(Vehicle v) {
-		v.newVehicle();
-
+		if(acceptingNewVehicle()){
+			v.newVehicle();
+			vehicleSpace += getVehicleSpace(v);
+		}
 	}
 
 }
