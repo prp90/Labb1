@@ -126,7 +126,7 @@ public class FerryTest extends TestCase {
 	@Test
 	public void testEnoughSpaceForNewVehicleSpaceShouldPass(){
 		Car car = new Car(2);	
-		when(ferrySpy.getNumberOfVehicleSpacesOccupied()).thenReturn(198);
+		when(ferrySpy.getNumberOfVehicleSpacesOccupied()).thenReturn(195);
 		assertTrue(ferrySpy.spaceAvailableForVehicle(car));
 	}
 
