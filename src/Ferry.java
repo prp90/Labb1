@@ -53,6 +53,11 @@ public class Ferry {
 		}
 	}
 
+	public boolean spaceAvailableForVehicle(Vehicle v) {
+		 return false;
+		
+	}
+
 }
 
 

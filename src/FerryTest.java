@@ -7,7 +7,6 @@ import org.junit.Test;
 
 public class FerryTest extends TestCase {
 
-	private static final Class<? extends Throwable> RuntimeException = null;
 	private Ferry testFerryObject;
 	private Ferry ferrySpy;
 	private Passenger passenger;
@@ -122,6 +121,13 @@ public class FerryTest extends TestCase {
 		} catch (RuntimeException e){
 		}
 
+	}
+
+	@Test
+	public void testEnoughSpaceForNewVehicleSpaceShouldPass(){
+		Car car = new Car(2);	
+		when(ferrySpy.getNumberOfVehicleSpacesOccupied()).thenReturn(198);
+		assertTrue(ferrySpy.spaceAvailableForVehicle(car));
 	}
 
 }
