@@ -76,6 +76,7 @@ public class FerryTest extends TestCase {
 			ferrySpy.embarkNewPassenger(passenger);
 		}
 		catch (RuntimeException e){
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -119,6 +120,7 @@ public class FerryTest extends TestCase {
 		try{
 			ferrySpy.embarkNewVehicle(vehicle);
 		} catch (RuntimeException e){
+			System.out.println(e.getMessage());
 		}
 
 	}
@@ -138,6 +140,7 @@ public class FerryTest extends TestCase {
 		try{
 			ferrySpy.embarkNewVehicle(car);
 		} catch (RuntimeException e){
+			System.out.println(e.getMessage());
 
 		}
 	}
