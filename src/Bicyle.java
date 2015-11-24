@@ -2,7 +2,7 @@
 public class Bicyle extends Vehicle {
 
 	Bicyle() {
-		super(2,1);
+		super(1,1);
 	}
 
 }
