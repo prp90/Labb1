@@ -66,9 +66,10 @@ public class Ferry {
 
 	}
 
-	public boolean spaceAvailableForPassengersInsideVehicle(Bicycle bicycle) {
+	public boolean spaceAvailableForPassengersInsideVehicle(Vehicle v) {
 		
-		return true;
+		return acceptingNewPassenger() ? ((MAX_PASSENGERS-getNumberOfPassengers())) >= getVehiclePassengers(v)
+							: false;
 	}
 
 }

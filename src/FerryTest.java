@@ -153,7 +153,7 @@ public class FerryTest extends TestCase {
 	public void testSpaceForPassengersInsideVehicleShouldPass(){
 		
 		Bicycle bicycle = new Bicycle();
-		when(ferrySpy.getNumberOfPassengers()).thenReturn(3);
+		when(ferrySpy.getNumberOfPassengers()).thenReturn(199);
 		assertTrue(ferrySpy.spaceAvailableForPassengersInsideVehicle(bicycle));
 	}
 	
