@@ -1,12 +1,12 @@
 public class Ferry {
 
-	private int vehicleSpace = 0;
+	private int vehicleSpaceOccupied = 0;
 	private final int MAX_PASSENGERS = 200;
 	private int passengers = 0;
 	private final int MAX_VEHICLES = 200;
 
 	public boolean isEmpty() {
-		return vehicleSpace == 0? true: false;
+		return vehicleSpaceOccupied == 0? true: false;
 	}
 
 	public boolean acceptingNewPassenger() {
@@ -31,7 +31,7 @@ public class Ferry {
 	}
 
 	public int getNumberOfVehicleSpacesOccupied() {
-		return this.vehicleSpace;
+		return this.vehicleSpaceOccupied;
 	}
 
 	public int getVehicleSpace(Vehicle v){
@@ -46,7 +46,10 @@ public class Ferry {
 	public void embarkNewVehicle(Vehicle v) {
 		if(acceptingNewVehicle()){
 			v.newVehicle();
-			vehicleSpace += getVehicleSpace(v);
+			vehicleSpaceOccupied += getVehicleSpace(v);
+		}
+		else{
+			throw new RuntimeException("Ferry has no more space for vehicles");
 		}
 	}
 
