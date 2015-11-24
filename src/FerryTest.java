@@ -11,7 +11,7 @@ public class FerryTest extends TestCase {
 	private Ferry testFerryObject;
 	private Ferry ferrySpy;
 	private Passenger passenger;
-
+	private Vehicle vehicle;
 
 	@Before
 	public void setUp() throws Exception {
@@ -23,7 +23,6 @@ public class FerryTest extends TestCase {
 	@Test
 	public void testFerryObjectNotNull(){
 		assertNotNull(testFerryObject);
-
 	}
 
 	@Test
@@ -78,7 +77,6 @@ public class FerryTest extends TestCase {
 			ferrySpy.embarkNewPassenger(passenger);
 		}
 		catch (RuntimeException e){
-
 		}
 	}
 
@@ -117,15 +115,12 @@ public class FerryTest extends TestCase {
 	@Test(expected = RuntimeException.class)
 	public void testEmbarkNewVehicleShouldThrowException(){
 
-		Vehicle vehicle = new Vehicle(2,2);
+		vehicle = new Vehicle(2,2);	
 		when(ferrySpy.getNumberOfVehicleSpacesOccupied()).thenReturn(300);
 		try{
 			ferrySpy.embarkNewVehicle(vehicle);
 		} catch (RuntimeException e){
-
 		}
-
-
 
 	}
 
