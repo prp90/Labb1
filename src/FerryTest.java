@@ -129,13 +129,17 @@ public class FerryTest extends TestCase {
 		when(ferrySpy.getNumberOfVehicleSpacesOccupied()).thenReturn(195);
 		assertTrue(ferrySpy.spaceAvailableForVehicle(car));
 	}
-	
+
 	@Test
 	public void testEnoughSpaceForNewVehicleSpaceShouldThrowException(){
-		
+
 		Car car = new Car(2);
 		when(ferrySpy.getNumberOfVehicleSpacesOccupied()).thenReturn(196);
-		ferrySpy.embarkNewVehicle(car);
+		try{
+			ferrySpy.embarkNewVehicle(car);
+		} catch (RuntimeException e){
+
+		}
 	}
 
 }
