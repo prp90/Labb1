@@ -18,7 +18,7 @@ public class Vehicle {
 	}
 
 	public void newVehicle() {
-		
+		System.out.println("New Vehicle Embarked");
 	}
 
 
