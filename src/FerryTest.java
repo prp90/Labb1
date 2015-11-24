@@ -98,6 +98,12 @@ public class FerryTest extends TestCase {
 		Car car = new Car(1);
 		assertEquals(5, testFerryObject.getVehicleSpace(car));
 	}
+	
+	@Test
+	public void testGetVehicleSpaceForBicycle(){
+		Bicyle bicycle = new Bicyle();
+		assertEquals(1, testFerryObject.getVehicleSpace(bicycle));
+	}
 
 	@Test
 	public void testGetNumberOfPassengersInsideVehicle(){
@@ -144,5 +150,6 @@ public class FerryTest extends TestCase {
 
 		}
 	}
+	
 
 }
