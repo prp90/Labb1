@@ -41,7 +41,6 @@ public class Ferry {
 	}
 
 	public int getVehiclePassengers(Vehicle v) {
-
 		return v.getNumberOfPassengersInsideVehicle();
 	}
 
@@ -49,9 +48,9 @@ public class Ferry {
 		if(acceptingNewVehicle()){
 			if(spaceAvailableForVehicle(v)){
 				if(spaceAvailableForPassengersInsideVehicle(v)){
-				v.newVehicle();
-				vehicleSpaceOccupied += getVehicleSpace(v);
-				passengers += getVehiclePassengers(v);
+					v.newVehicle();
+					vehicleSpaceOccupied += getVehicleSpace(v);
+					passengers += getVehiclePassengers(v);
 				}
 				else{
 					throw new RuntimeException("Not enough space for vehicles passengers.");
@@ -73,9 +72,9 @@ public class Ferry {
 	}
 
 	public boolean spaceAvailableForPassengersInsideVehicle(Vehicle v) {
-		
+
 		return acceptingNewPassenger() ? ((MAX_PASSENGERS-getNumberOfPassengers())) >= getVehiclePassengers(v)
-							: false;
+				: false;
 	}
 
 }

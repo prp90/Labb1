@@ -98,7 +98,7 @@ public class FerryTest extends TestCase {
 		Car car = new Car(1);
 		assertEquals(5, testFerryObject.getVehicleSpace(car));
 	}
-	
+
 	@Test
 	public void testGetVehicleSpaceForBicycle(){
 		Bicycle bicycle = new Bicycle();
@@ -122,12 +122,14 @@ public class FerryTest extends TestCase {
 	public void testEmbarkNewVehicleShouldThrowException(){
 
 		vehicle = new Vehicle(2,2);
+		when(ferrySpy.getNumberOfVehicleSpacesOccupied()).thenReturn(2000);
+		
 		try{
 			ferrySpy.embarkNewVehicle(vehicle);
 		} catch (RuntimeException e){
 			System.out.println(e.getMessage());
 		}
-		}
+	}
 
 	@Test
 	public void testEnoughSpaceForNewVehicleSpaceShouldPass(){
@@ -148,27 +150,26 @@ public class FerryTest extends TestCase {
 
 		}
 	}
-	
+
 	@Test
 	public void testSpaceForPassengersInsideVehicleShouldPass(){
-		
+
 		Bicycle bicycle = new Bicycle();
 		when(ferrySpy.getNumberOfPassengers()).thenReturn(199);
 		assertTrue(ferrySpy.spaceAvailableForPassengersInsideVehicle(bicycle));
 	}
-	
+
 
 	@Test
 	public void testEmbarkVehiclesPassengersShouldThrowException(){
 		Car car = new Car(3);
 		when(ferrySpy.getNumberOfPassengers()).thenReturn(199);
 		try{
-		ferrySpy.embarkNewVehicle(car);
+			ferrySpy.embarkNewVehicle(car);
 		}catch (RuntimeException e){
-			
+			System.out.println(e.getMessage());
 		}
-		
-		
+
 	}
 
 }
