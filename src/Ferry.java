@@ -1,3 +1,5 @@
+import javax.management.RuntimeErrorException;
+
 public class Ferry {
 
 	private int vehicleSpaceOccupied = 0;
@@ -45,8 +47,13 @@ public class Ferry {
 
 	public void embarkNewVehicle(Vehicle v) {
 		if(acceptingNewVehicle()){
-			v.newVehicle();
-			vehicleSpaceOccupied += getVehicleSpace(v);
+			if(spaceAvailableForVehicle(v)){
+				v.newVehicle();
+				vehicleSpaceOccupied += getVehicleSpace(v);
+			}
+			else{
+				throw new RuntimeException("Ferry's available space is not enough for this vehicle");
+			}
 		}
 		else{
 			throw new RuntimeException("Ferry has no more space for vehicles");
@@ -54,8 +61,9 @@ public class Ferry {
 	}
 
 	public boolean spaceAvailableForVehicle(Vehicle v) {
-		 return true;
-		
+		return acceptingNewVehicle() ? ((MAX_VEHICLES-getNumberOfVehicleSpacesOccupied()) >= getVehicleSpace(v))
+				: false;
+
 	}
 
 }
