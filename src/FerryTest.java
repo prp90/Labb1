@@ -101,7 +101,7 @@ public class FerryTest extends TestCase {
 	
 	@Test
 	public void testGetVehicleSpaceForBicycle(){
-		Bicyle bicycle = new Bicyle();
+		Bicycle bicycle = new Bicycle();
 		assertEquals(1, testFerryObject.getVehicleSpace(bicycle));
 	}
 
@@ -121,15 +121,13 @@ public class FerryTest extends TestCase {
 	@Test(expected = RuntimeException.class)
 	public void testEmbarkNewVehicleShouldThrowException(){
 
-		vehicle = new Vehicle(2,2);	
-		when(ferrySpy.getNumberOfVehicleSpacesOccupied()).thenReturn(300);
+		vehicle = new Vehicle(2,2);
 		try{
 			ferrySpy.embarkNewVehicle(vehicle);
 		} catch (RuntimeException e){
 			System.out.println(e.getMessage());
 		}
-
-	}
+		}
 
 	@Test
 	public void testEnoughSpaceForNewVehicleSpaceShouldPass(){
@@ -149,6 +147,14 @@ public class FerryTest extends TestCase {
 			System.out.println(e.getMessage());
 
 		}
+	}
+	
+	@Test
+	public void testSpaceForPassengersInsideVehicleShouldPass(){
+		
+		Bicycle bicycle = new Bicycle();
+		when(ferrySpy.getNumberOfPassengers()).thenReturn(3);
+		assertTrue(ferrySpy.spaceAvailableForPassengersInsideVehicle(bicycle));
 	}
 	
 

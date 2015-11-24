@@ -66,6 +66,11 @@ public class Ferry {
 
 	}
 
+	public boolean spaceAvailableForPassengersInsideVehicle(Bicycle bicycle) {
+		
+		return false;
+	}
+
 }
 
 
