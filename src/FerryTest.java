@@ -123,7 +123,7 @@ public class FerryTest extends TestCase {
 
 		vehicle = new Vehicle(2,2);
 		when(ferrySpy.getNumberOfVehicleSpacesOccupied()).thenReturn(2000);
-		
+
 		try{
 			ferrySpy.embarkNewVehicle(vehicle);
 		} catch (RuntimeException e){
@@ -170,13 +170,16 @@ public class FerryTest extends TestCase {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	@Test
 	public void testDisembarkFerry(){
-		
-		when(ferrySpy.getNumberOfVehicleSpacesOccupied()).thenReturn(200);
+		ferrySpy.embarkNewPassenger(passenger);
+		ferrySpy.embarkNewVehicle(new Car(4));
+		ferrySpy.embarkNewVehicle(new Bicycle());
+		assertEquals(6, ferrySpy.getNumberOfPassengers());
+		assertEquals(6, ferrySpy.getNumberOfVehicleSpacesOccupied());
 		ferrySpy.disembarkFerry();
-		assertEquals(0, ferrySpy.getNumberOfVehicleSpacesOccupied());
-		
+		assertEquals(0, ferrySpy.getTotalSpaceOccupied());
+
 	}
 }

@@ -79,7 +79,12 @@ public class Ferry {
 
 	public void disembarkFerry() {
 		
-		
+		passengers = 0;
+		vehicleSpaceOccupied = 0;
+	}
+	
+	public int getTotalSpaceOccupied(){
+		return getNumberOfPassengers() + getNumberOfVehicleSpacesOccupied();
 	}
 
 
