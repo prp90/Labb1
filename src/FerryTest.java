@@ -176,8 +176,6 @@ public class FerryTest extends TestCase {
 		ferrySpy.embarkNewPassenger(passenger);
 		ferrySpy.embarkNewVehicle(new Car(4));
 		ferrySpy.embarkNewVehicle(new Bicycle());
-		assertEquals(6, ferrySpy.getNumberOfPassengers());
-		assertEquals(6, ferrySpy.getNumberOfVehicleSpacesOccupied());
 		ferrySpy.disembarkFerry();
 		assertEquals(0, ferrySpy.getTotalSpaceOccupied());
 
