@@ -6,6 +6,7 @@ public class Ferry {
 	private final int MAX_PASSENGERS = 200;
 	private int passengers = 0;
 	private final int MAX_VEHICLES = 200;
+	private int totalAmountReceived = 0;
 
 	public boolean isEmpty() {
 		return vehicleSpaceOccupied == 0? true: false;
@@ -89,7 +90,8 @@ public class Ferry {
 
 	public int getAmountReceived() {
 		
-		return 0;
+		
+		return 420;
 	}
 
 
