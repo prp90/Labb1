@@ -91,6 +91,7 @@ public class Ferry {
 		
 		passengers = 0;
 		vehicleSpaceOccupied = 0;
+		totalAmountReceived = 0;
 	}
 	
 	public int getTotalSpaceOccupied(){
