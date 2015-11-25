@@ -28,6 +28,7 @@ public class Ferry {
 		if(acceptingNewPassenger()){
 			p.newPassenger();
 			passengers++;
+			totalAmountReceived += 50;
 		}else {
 			throw new RuntimeException("Ferry has no more space for passengers");
 		}
@@ -52,6 +53,14 @@ public class Ferry {
 					v.newVehicle();
 					vehicleSpaceOccupied += getVehicleSpace(v);
 					passengers += getVehiclePassengers(v);
+					totalAmountReceived += (50*getVehiclePassengers(v));
+					if(getVehicleSpace(v) == 1){
+						totalAmountReceived += 70;
+					}else if(getVehicleSpace(v) == 5){
+						totalAmountReceived += 200;
+					}else{
+						totalAmountReceived += 60*getVehicleSpace(v);
+					}
 				}
 				else{
 					throw new RuntimeException("Not enough space for vehicles passengers.");
@@ -89,9 +98,7 @@ public class Ferry {
 	}
 
 	public int getAmountReceived() {
-		
-		
-		return 420;
+		return totalAmountReceived;
 	}
 
 
