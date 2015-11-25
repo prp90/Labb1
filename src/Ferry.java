@@ -77,6 +77,13 @@ public class Ferry {
 				: false;
 	}
 
+	public void disembarkFerry() {
+		
+		
+	}
+
+
+
 }
 
 

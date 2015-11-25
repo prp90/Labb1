@@ -169,7 +169,14 @@ public class FerryTest extends TestCase {
 		}catch (RuntimeException e){
 			System.out.println(e.getMessage());
 		}
-
 	}
-
+	
+	@Test
+	public void testDisembarkFerry(){
+		
+		when(ferrySpy.getNumberOfVehicleSpacesOccupied()).thenReturn(200);
+		ferrySpy.disembarkFerry();
+		assertEquals(0, ferrySpy.getNumberOfVehicleSpacesOccupied());
+		
+	}
 }
