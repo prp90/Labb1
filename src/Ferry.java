@@ -87,6 +87,11 @@ public class Ferry {
 		return getNumberOfPassengers() + getNumberOfVehicleSpacesOccupied();
 	}
 
+	public int getAmountReceived() {
+		
+		return 0;
+	}
+
 
 
 }

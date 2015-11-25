@@ -178,6 +178,14 @@ public class FerryTest extends TestCase {
 		ferrySpy.embarkNewVehicle(new Bicycle());
 		ferrySpy.disembarkFerry();
 		assertEquals(0, ferrySpy.getTotalSpaceOccupied());
-
+	}
+	
+	@Test
+	public void testAmountReceived(){
+		testFerryObject.embarkNewPassenger(passenger);
+		testFerryObject.embarkNewVehicle(new Car(1));
+		testFerryObject.embarkNewVehicle(new Bicycle());
+		assertEquals(420, testFerryObject.getAmountReceived());
+		
 	}
 }
