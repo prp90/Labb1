@@ -186,6 +186,16 @@ public class FerryTest extends TestCase {
 		testFerryObject.embarkNewVehicle(new Car(1));
 		testFerryObject.embarkNewVehicle(new Bicycle());
 		assertEquals(420, testFerryObject.getAmountReceived());
+		}
+	
+	@Test
+	public void testResetingAmountReceivedWhenFerryDisembarked(){
+		
+		testFerryObject.embarkNewPassenger(passenger);
+		testFerryObject.embarkNewVehicle(new Car(4));
+		testFerryObject.embarkNewVehicle(new Bicycle());
+		testFerryObject.disembarkFerry();
+		assertEquals(0, testFerryObject.getAmountReceived());
 		
 	}
 }
